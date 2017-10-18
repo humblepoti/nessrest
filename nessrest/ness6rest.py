@@ -924,10 +924,10 @@ class Scanner(object):
         return kbs
 
 ################################################################################
-    def download_scan(self, export_format="", chapters="", dbpasswd=""):
+    def download_scan(self, id, export_format="", chapters="", dbpasswd=""):
         running = True
         counter = 0
-
+        self.scan_id = id   
         self.action("scans/" + str(self.scan_id), method="GET")
         if (export_format=="db"):
             data = {"format":"db","password":dbpasswd}
